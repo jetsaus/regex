@@ -28,9 +28,37 @@
         // Удаление двойных TAB, заменой на один TAB
         $arrResult[] = preg_replace($pattern, $replacement, $str);
     }
-    
     echo '<p><i>Готовый массив:</i></p>';
     var_dump($arrResult);
 ?>
+
+<h5>2:</h5>
+<p><i>Имеются строки, разделенные переносами. Некоторые строки отделены двумя переносами. Составьте регулярное выражение, которое бы убрало лишние переносы строк.</i></p>
+<p><i>Исходные строки:</i></p>
+<?php
+    $arr = [
+        'string1\r\n',
+        'string2\r\n\r\n',
+        'string3\r\n',
+        'string4\r\n\r\n',
+        'string5\r\n',
+    ];
+    var_dump($arr);
+    $arrResult = [];
+    echo '<h3>Решение:</h3>';
+    $pattern = "~\r\n\r\n~";
+    $replacement = "\r\n";
+    foreach ($arr as $str) {
+        // Замена двух переносов строки на один
+        $arrResult[] = preg_replace($pattern, $replacement, $str);
+    }
+    echo '<p><i>Готовые строки:</i></p>';
+    var_dump($arrResult);
+    echo preg_replace($pattern, $replacement,'string2\r\n\r\n');
+?>
+
+
+
+
 </body>
 </html>
