@@ -36,25 +36,23 @@
 <p><i>Имеются строки, разделенные переносами. Некоторые строки отделены двумя переносами. Составьте регулярное выражение, которое бы убрало лишние переносы строк.</i></p>
 <p><i>Исходные строки:</i></p>
 <?php
-    $arr = [
-        'string1\r\n',
-        'string2\r\n\r\n',
-        'string3\r\n',
-        'string4\r\n\r\n',
-        'string5\r\n',
-    ];
-    var_dump($arr);
-    $arrResult = [];
     echo '<h3>Решение:</h3>';
     $pattern = "~\r\n\r\n~";
     $replacement = "\r\n";
+    // Читаем строки из файла
+    $filename = 'in.txt';                                   // Имя файла
+    $handle = fopen($filename, 'rb');                       // Дескриптор файла
+    $contents = fread($handle, filesize($filename));        // Чтение из файла в буфер обмена
+    fclose($handle);                                        // Закрытие файла
+/*
     foreach ($arr as $str) {
         // Замена двух переносов строки на один
         $arrResult[] = preg_replace($pattern, $replacement, $str);
     }
+*/    
     echo '<p><i>Готовые строки:</i></p>';
-    var_dump($arrResult);
-    echo preg_replace($pattern, $replacement,'string2\r\n\r\n');
+    echo $contents;
+    // echo preg_replace($pattern, $replacement,'string2\r\n\r\n');
 ?>
 
 
