@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .noMarker {list-style-type: none;}
+        .alpha {list-style-type: lower-alpha;}
+    </style>
     <title>Урок 4</title>
 </head>
 <body>
@@ -38,6 +42,23 @@
 <p>Регулярное выражение в контексте PHP: $buffer = preg_replace("~\r\n\r\n~", "\r\n", $contents);</p>
 <p><i>Из командной строки необходимо запустить консольный скрипт hw4c.php. Он подхватит из текущего каталога файл in.txt, удалит в нем строки с двойным переводом строки и результат запишет в out.txt текущего каталога.</i></p>
 
+<h5>3:</h5>
+<p><i>3. Имеются строки:
+    <ul class="noMarker">
+        <li>cat</li>
+        <li>John</li>
+        <li>dog</li>
+        <li>Ashley</li>
+        <li>Andrey</li>
+        <li>air</li>
+    </ul>
+    <ol class="alpha">
+	    <li>Среди этих строк найти только имена;</li>
+	    <li>Среди этих сток найти все, кроме имен;</li>
+	    <li>Задание выполнить, как минимум, двумя способами.</li>
+    </ol>
+</i></p>    
+<h3>Решение:</h3>
 
 
 
